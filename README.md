@@ -1,6 +1,16 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Report:
+
+In order to achieve the goal of this project, the main task was to tune the individual parameters of the PID controller such that the vehicle would be able to drive the entire track in the simulator. I chose to simply do this via manual "twiddling" of the parameters. Based on a simple observation of the following PID diagram, I decided to backed off the parameter for P and increased the parameter for D. 
+
+![PID graph](pid.png)
+
+However, at the lower limits of P (0.01 to 0.1) the car's position would not change enough to make the sharper turns, so I had to bring the magnitude of the P parameter back up. I settled in the end for Kp = -0.15, Ki = 0, Kd = -0.9. It never proved useful to manipulate Ki. Given that the simulator starts in an aligned state, Ki is superflous and only adds problems when it is non-zero.
+
+
+
 ---
 
 ## Dependencies
